@@ -39,6 +39,7 @@ public class BothWayCustomLinkedList implements Iterable<String> {
         private Node<String> current = head; // we use this field to set our current head position
 
         private Node<String> currentEnd = tail;
+
         public boolean hasNext() { // method that computes if our Node contains next data
             return current != null; // returns true or false
         }

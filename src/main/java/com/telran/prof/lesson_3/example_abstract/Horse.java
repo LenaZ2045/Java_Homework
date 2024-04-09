@@ -1,8 +1,12 @@
-package com.telran.prof.lesson_3;
+package com.telran.prof.lesson_3.example_abstract;
 
-public class Horse extends WildAnimal{
+public class Horse extends WildAnimal {
 
-    public void jump(){
+    public Horse(String name) {
+        super(name);
+    }
+
+    public void jump() {
         //
     }
 

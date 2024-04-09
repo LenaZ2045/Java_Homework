@@ -1,2 +1,7 @@
-package com.telran.prof.lesson_13.example;public enum Status {
+package com.telran.prof.lesson_13.example;
+
+public enum Status {
+
+    APPROVED,
+    DECLINED
 }

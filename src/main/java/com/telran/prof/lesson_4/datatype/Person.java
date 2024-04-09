@@ -1,2 +1,25 @@
-package com.telran.prof.lesson_4.datatype;public class Person {
+package com.telran.prof.lesson_4.datatype;
+
+public class Person {
+
+    private String name;
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

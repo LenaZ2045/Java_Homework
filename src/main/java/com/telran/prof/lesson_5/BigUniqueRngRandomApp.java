@@ -1,6 +1,7 @@
 package com.telran.prof.lesson_5;
 
-public class RandomApp {
+public class BigUniqueRngRandomApp {
+
     public static void main(String[] args) {
 
         BigUniqueRng bigRng = new BigUniqueRng(5, 20);

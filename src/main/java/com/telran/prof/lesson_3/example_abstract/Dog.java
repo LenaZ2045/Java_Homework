@@ -1,6 +1,10 @@
-package com.telran.prof.lesson_3;
+package com.telran.prof.lesson_3.example_abstract;
 
-public class Dog extends HomeAnimal{
+public class Dog extends HomeAnimal {
+
+    public Dog(String name) {
+        super(name);
+    }
 
     public void hunts() {
         System.out.println("Dog hunts for rabbits");

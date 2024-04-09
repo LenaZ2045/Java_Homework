@@ -3,7 +3,7 @@ package com.telran.prof.homework_8_March_6_24;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class CustomLinkedList implements Iterable<Integer>{
+public class CustomLinkedList implements Iterable<Integer> {
 
     private Node head;
     private int size;
@@ -15,6 +15,7 @@ public class CustomLinkedList implements Iterable<Integer>{
     private class CustomLinkedListIterator implements Iterator<Integer> {
 
         private Node current = head;
+
         @Override
         public boolean hasNext() {
             return current != null;

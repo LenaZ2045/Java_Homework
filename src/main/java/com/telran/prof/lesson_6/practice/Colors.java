@@ -1,2 +1,5 @@
-package com.telran.prof.lesson_6.practice;public enum Colors {
+package com.telran.prof.lesson_6.practice;
+
+public enum Colors {
+    RED, WHITE, BLACK;
 }

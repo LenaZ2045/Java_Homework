@@ -1,2 +1,4 @@
-package com.telran.prof.lesson_12.inmemorydb;public class User {
+package com.telran.prof.lesson_12.inmemorydb;
+
+public class User {
 }

@@ -1,8 +1,20 @@
-package com.telran.prof.lesson_3;
+package com.telran.prof.lesson_3.example_abstract;
 
-public abstract class Animal { // we by extends joined all three classes (dog, cow, horse)
-    public void eat() {
-        System.out.println("This animal eats grass!");
+public abstract class Animal { // by extends we joined all three classes (dog, cow, horse)
+
+    private String name; // saves condition of each objects in abstract class for each object separately
+
+    // presence of fields
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public void eat() { // methods are the actions which can be done by the object that calls the method
+        System.out.println("These animals eat grass!");
+    }
+
+    public String getName() {
+        return name;
     }
 
     public abstract void born();

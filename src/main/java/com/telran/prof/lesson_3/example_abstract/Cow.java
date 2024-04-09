@@ -1,8 +1,12 @@
-package com.telran.prof.lesson_3;
+package com.telran.prof.lesson_3.example_abstract;
 
 public class Cow extends HomeAnimal {
 
-    public void produceMilk(){
+    public Cow(String name) {
+        super(name);
+    }
+
+    public void produceMilk() {
         //
     }
 
@@ -14,6 +18,6 @@ public class Cow extends HomeAnimal {
 
     @Override
     void humanCare() {
-        System.out.println("Human cares for cows");
+        System.out.println("Human take care for cows");
     }
 }

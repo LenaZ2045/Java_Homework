@@ -1,4 +1,4 @@
-package com.telran.prof.homework_5_Feb;
+package com.telran.prof.homework_5_Feb_26_24;
 
 import java.util.Scanner;
 import java.util.Arrays;
