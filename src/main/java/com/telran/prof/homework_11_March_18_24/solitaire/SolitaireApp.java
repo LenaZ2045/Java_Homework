@@ -5,41 +5,53 @@ import java.util.*;
 public class SolitaireApp {
 
     public static void main(String[] args) {
+        List<Suits> cardSuitList = new ArrayList<>();
+        cardSuitList.add(Suits.CLUBS);
+        cardSuitList.add(Suits.DIAMONDS);
+        cardSuitList.add(Suits.HEARTS);
+        cardSuitList.add(Suits.SPADES);
 
-        Deck deck = new Deck();
-        deck.initialization();
-        deck.shuffling();
-        System.out.println();
-        // YURIY, the only what gives me unique suits if I put :
-//        @Override
-//        public int hashCode() {
-//            return Objects.hash(suit); // SEE IN CARD-DECK class
-//        }
-        // with this above it only gives me four suits that are in enum Suit
-        //But you are saying that I have to have odd number list nu suits duplicates follow next to suit
-        // Show please how this should be done?
-        System.out.println("Unique cards in the deck : ");
-        deck.printUniqueCards();
+        List<Rank> cardRankList = new ArrayList<>();
+        cardRankList.add(Rank.ACE);
+        cardRankList.add(Rank.TWO);
+        cardRankList.add(Rank.THREE);
+        cardRankList.add(Rank.FOUR);
+        cardRankList.add(Rank.FIVE);
+        cardRankList.add(Rank.SIX);
+        cardRankList.add(Rank.SEVEN);
+        cardRankList.add(Rank.EIGHT);
+        cardRankList.add(Rank.NINE);
+        cardRankList.add(Rank.TEN);
+        cardRankList.add(Rank.JACK);
+        cardRankList.add(Rank.QUEEN);
+        cardRankList.add(Rank.KING);
 
-        Stack<CardDeck> deckStack = new Stack<>();
-        List<CardDeck> cardDeckList = new ArrayList<>(deckStack);
-        Collections.shuffle(cardDeckList);
-        deckStack = new Stack<>();
-        deckStack.addAll(cardDeckList);
-
-        System.out.println();
-        Set<Suits> uniqueSet = new HashSet<>();
-        for (CardDeck card : deckStack) {
-            if (!uniqueSet.contains(card.getSuit())) {
-                System.out.println(card);
-                uniqueSet.add(card.getSuit());
+        Stack<Deck> stackDeck = new Stack<>();
+        for (Suits suits : cardSuitList) {
+            for (Rank ranks : cardRankList) {
+                stackDeck.add(new Deck(suits, ranks));
             }
         }
-        System.out.println(uniqueSet.toArray());
-    }
 
-    @Override
-    public String toString() {
-        return "SolitaireApp{}";
+        Collections.shuffle(stackDeck);
+        System.out.println();
+        System.out.println("Stack list of the cards in the deck = " + stackDeck.size());
+        System.out.println(stackDeck);
+
+        System.out.println();
+        for (int i = 0; i < stackDeck.size() - 1; i++) {
+            Deck currentCard = stackDeck.get(i);
+            Deck nextCard = stackDeck.get(i + 1);
+            if (currentCard.getSuit().equals(nextCard.getSuit())) {
+                for (int j = 0; j < stackDeck.size() - 1; j++) {
+                    stackDeck.remove(i + 1);
+                }
+            } else {
+                System.out.println("Error");
+            }
+        }
+        System.out.println();
+        System.out.println("Unique stack list of the cards in the deck : ");
+        System.out.println(stackDeck);
     }
 }

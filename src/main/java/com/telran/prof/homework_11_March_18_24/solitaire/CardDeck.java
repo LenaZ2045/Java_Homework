@@ -8,14 +8,9 @@ public class CardDeck {
 
     private final Rank rank;
 
-
     public CardDeck(Suits suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;
-    }
-
-    public Suits getSuit() {
-        return suit;
     }
 
     @Override
@@ -23,12 +18,12 @@ public class CardDeck {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         CardDeck uniqueCard = (CardDeck) obj;
-        return suit == uniqueCard.suit && rank.equals(uniqueCard.rank); // when I removed RANK I could see only 4 suits
+        return suit == uniqueCard.suit && rank == uniqueCard.rank;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(suit, rank); // when I removed RANK I could see only 4 suits...
+        return Objects.hash(suit, rank);
     }
 
     @Override
