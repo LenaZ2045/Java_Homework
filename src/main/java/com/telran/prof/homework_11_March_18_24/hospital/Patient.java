@@ -1,6 +1,6 @@
 package com.telran.prof.homework_11_March_18_24.hospital;
 
-public class Patient extends Registry{
+public class Patient extends Registry {
 
     private String patientName;
 
@@ -22,10 +22,6 @@ public class Patient extends Registry{
         this.status = status;
     }
 
-    public String getPatientName() {
-        return patientName;
-    }
-
     public boolean isUrgent() {
         return urgent;
     }
@@ -40,11 +36,6 @@ public class Patient extends Registry{
 
     @Override
     public String toString() {
-        return "Patients{" +
-                "patientName='" + patientName + '\'' +
-                ", numberOfQueue=" + numberOfQueue +
-                ", status=" + status +
-                ", urgency=" + urgent +
-                '}';
+        return "Patients{" + "patientName='" + patientName + '\'' + ", numberOfQueue=" + numberOfQueue + ", status=" + status + ", urgency=" + urgent + '}';
     }
 }
