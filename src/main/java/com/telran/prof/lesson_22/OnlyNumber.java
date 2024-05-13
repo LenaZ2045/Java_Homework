@@ -10,8 +10,8 @@ public class OnlyNumber <T, U> {
         this.numberTwo = numberTwo;
     }
 
-    public T sum(T numberOne, U numberTwo) {
-        boolean sum = numberOne.equals(numberTwo);
-        return s;
+    public void listNum(T numberOne, U numberTwo) {
+        System.out.println(numberOne);
+        System.out.println(numberTwo);
     }
 }

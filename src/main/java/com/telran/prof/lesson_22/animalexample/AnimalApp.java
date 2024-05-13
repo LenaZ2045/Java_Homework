@@ -41,7 +41,7 @@ public class AnimalApp {
         Cat catThree = new Cat("catThree");
         SmallCat smallCat = new SmallCat("smallCat");
         cats.add(smallCat);
-        cats.add(catThree);
+//        cats.add(catThree); // are not able to add by higher hierarchy
         cats.forEach(cat -> System.out.println(cat));
     }
 }
