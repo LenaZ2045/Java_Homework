@@ -21,13 +21,13 @@ public class OperatorExample {
 //        findFirst - terminal
 
         List<Integer> list1 = Arrays.asList(2, 4, 5, 6, 8);
-        System.out.println("first elemnt after filter is " +
-                .list1.stream()
+        System.out.println("first element after filter is " +
+                list1.stream()
                 .filter(integer -> integer > 7)
                 .findFirst()
-                .orElse(0)); // optional
+                .orElse(0)); // optional answer '0' if logic integer > 7 for first integer in the list is not true
 
-        String[] objects = list.stream().toArray(String[]::new); // Object gives
+        String[] objects = list.stream().toArray(String[]::new); // Object[] gives access to the different types of values
         String[] arrays2 = list. stream().toArray(value -> new String[value]);
 
     }

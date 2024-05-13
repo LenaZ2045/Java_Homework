@@ -40,7 +40,7 @@ public class LibApp {
         }
 //        Student student = findById(long id);
 
-            List<Long> colect = students.stream()
+            List<Long> collect = students.stream()
                     .filter(student1 -> student1.getBooks().size() > 3)
                     .map(student1 -> student1.getId())
                     .collect(Collectors.toList());

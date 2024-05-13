@@ -26,10 +26,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", position='" + position + '\'' +
-                ", salary=" + salary +
-                '}';
+        return "Employee{" + "name='" + name + '\'' + ", position='" + position + '\'' + ", salary=" + salary + '}';
     }
 }

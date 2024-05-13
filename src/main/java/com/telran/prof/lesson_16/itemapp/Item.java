@@ -1,8 +1,6 @@
 package com.telran.prof.lesson_16.itemapp;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.Objects;
 
 public class Item {
 
@@ -24,19 +22,19 @@ public class Item {
 
     @Override
     public boolean equals(Object o) {
-        return super.equals(o);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Item item = (Item) o;
+        return Objects.equals(title, item.title);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(title);
     }
 
     @Override
     public String toString() {
-        return "Item{" +
-                "title='" + title + '\'' +
-                ", price=" + price +
-                '}';
+        return "Item{" + "title='" + title + '\'' + ", price=" + price + '}';
     }
 }

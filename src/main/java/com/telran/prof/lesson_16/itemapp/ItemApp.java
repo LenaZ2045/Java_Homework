@@ -25,22 +25,28 @@ public class ItemApp {
 
         Set<Item> collect = list.stream()
                 .filter(item -> item.getPrice() > 15)
-                .collect(Collectors.toSet());
+                .collect(Collectors.toSet()); // set has no order and set does not keep duplicates
         System.out.println(collect);
 
         // reduce - terminal operator, which converts all elements into one by logic we write
         Optional<Integer> reduce = list.stream()
                 .filter(item -> item.getPrice() > 15)
-                .distinct()
+                .distinct() // Stream distinct() method where element occurs
+                // first will be present in the distinct elements stream
+                // no duplicates
                 .map(item -> item.getPrice())
+                // with set map we do not have strict order
                 .reduce((a, b) -> (a + b));
-        //Optional - class has method in for null (stream API) shell class for NULL Pointer Exception
-//                .collect(Collectors.toList());
-//        Integer integer = reduce.orElse(0);
-//        boolean present = reduce.isPresent();
-        System.out.println(reduce.get());
+        // Optional - class has method in for null (stream API) it is a shell class for NULL Pointer Exception
+        // .collect(Collectors.toList());
+        // Integer integer = reduce.orElse(0);
+        // boolean present = reduce.isPresent();
+        // reduce.orElseThrow()
+        System.out.println("Items sum total price is " + reduce.get());
 
-        list.stream()
-                .filter(list -> list.)
+        Optional<Item> first = list.stream()
+                .filter(item -> item.getPrice() > 100)
+                .findFirst();
+        System.out.println(first.isPresent() ? "Yes" : "No");
     }
 }
