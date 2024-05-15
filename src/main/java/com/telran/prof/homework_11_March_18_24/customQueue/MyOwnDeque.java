@@ -1,6 +1,8 @@
-package com.telran.prof.lesson_11.customeDeque;
+package com.telran.prof.homework_11_March_18_24.customQueue;
 
-public interface MyDeque {
+import java.util.Iterator;
+
+public interface MyOwnDeque {
 
     void addToHead(Integer element);
 
@@ -15,4 +17,6 @@ public interface MyDeque {
     Integer peekTail();
 
     boolean isEmpty();
+
+    Integer nextElement(Iterator<Integer> iterator);
 }
