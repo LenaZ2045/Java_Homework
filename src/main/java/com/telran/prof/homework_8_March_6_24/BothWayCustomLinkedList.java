@@ -24,7 +24,7 @@ public class BothWayCustomLinkedList implements Iterable<String> {
             head = newNode; // we create new Node in the head
             tail = newNode; // also it is our tail when we input first data
         } else { // otherwise
-            tail.next = newNode; // we add new Nose at the end of tail
+            tail.next = newNode; // we add new Node at the end of tail
             newNode.prev = tail; // reorganizing that previous data is a tail would move to the right position
             tail = newNode; // and our end Node-tail is data which was entered recently
         }
