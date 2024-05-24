@@ -4,6 +4,10 @@ import java.util.Iterator;
 
 public interface MyOwnDeque {
 
+    Integer next();
+
+    Integer next(int element);
+
     void addToHead(Integer element);
 
     void addToTail(Integer element);
@@ -19,4 +23,6 @@ public interface MyOwnDeque {
     boolean isEmpty();
 
     Integer nextElement(Iterator<Integer> iterator);
+
+    Integer[] iterator();
 }

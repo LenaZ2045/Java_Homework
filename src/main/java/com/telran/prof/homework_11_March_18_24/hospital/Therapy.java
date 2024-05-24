@@ -1,6 +1,6 @@
 package com.telran.prof.homework_11_March_18_24.hospital;
 
-public class Therapy extends Patient { // would like to see how would use this class
+public class Therapy extends Patient { // would like to see how do I use this class
 // Do I have to create class DOCTOR?
     private boolean urgentCarePatient;
 // do not have clear understanding what fields, constructors, methods my each class should to have

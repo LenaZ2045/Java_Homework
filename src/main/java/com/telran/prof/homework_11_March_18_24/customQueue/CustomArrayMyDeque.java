@@ -2,9 +2,8 @@ package com.telran.prof.homework_11_March_18_24.customQueue;
 
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.function.Consumer;
 
-public class CustomArrayMyDeque implements MyOwnDeque, Iterable {
+public class CustomArrayMyDeque implements MyOwnDeque {
 
     private int head;
     private int tail;
@@ -20,23 +19,36 @@ public class CustomArrayMyDeque implements MyOwnDeque, Iterable {
     }
 
     @Override
+    public Integer next() {
+        if (head != 0) {
+            head++;
+            return head;
+        }
+        tail++;
+        return tail;
+    }
+
+    @Override
+    public Integer next(int element) {
+        return element;
+    }
+
+    @Override
     public void addToHead(Integer element) {
-        if (head == 0) {
-            elements[head] = element;
-        } else {
-            head = head - 1;
+        if (head != tail) {
             elements[head] = element;
         }
+        head = head - 1;
+        elements[head] = element;
     }
 
     @Override
     public void addToTail(Integer element) {
-        if (tail == 0) {
-            elements[tail] = element;
-        } else {
-            tail++;
+        if (tail != head) {
             elements[tail] = element;
         }
+        tail++;
+        elements[tail] = element;
     }
 
     @Override
@@ -81,13 +93,21 @@ public class CustomArrayMyDeque implements MyOwnDeque, Iterable {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        if (elements != null) {
+            return false;
+        }
+        return true;
     }
 
     @Override
     public Integer nextElement(Iterator<Integer> iterator) {
         Integer element = elements[iterator.next()];
         return element;
+    }
+
+    @Override
+    public Integer[] iterator() {
+        return elements;
     }
 
     @Override
@@ -98,22 +118,4 @@ public class CustomArrayMyDeque implements MyOwnDeque, Iterable {
         }
         return "CustomArrayDeque{" + "head=" + head + ", tail=" + tail + ", elements=" + Arrays.toString(elements) + '}';
     }
-
-    @Override
-    public Iterator iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer action) {
-        Iterable.super.forEach(action);
-    }
-
-//    public Integer iterator(Iterator<Integer> capacity) { // YURIY, I WISH TO SEE HOW WOULD YOU DO THIS, PLEASE SHOW?
-//        Integer element = elements[capacity.next()];
-//        if (element.equals(null)) {
-//            return null;
-//        }
-//        return element;
-//    }
 }
