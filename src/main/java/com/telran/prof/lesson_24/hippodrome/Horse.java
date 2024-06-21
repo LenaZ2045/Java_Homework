@@ -1,15 +1,16 @@
 package com.telran.prof.lesson_24.hippodrome;
 
-import java.util.Comparator;
+public class Horse implements Runnable, Comparable<Horse> {
 
-public class Horse implements Runnable, Comparator<Horse> {
+    private final String name;
+    private final int step;
 
-    private String name;
-    private int step;
-
-    private int loopLength;
+    private final int loopLength;
 
     private int currentPosition = 0;
+
+    long startTime;
+    long endTime;
 
     public Horse(String name, int step, int loopLength) {
         this.name = name;
@@ -17,33 +18,36 @@ public class Horse implements Runnable, Comparator<Horse> {
         this.loopLength = loopLength;
     }
 
+    public int getLoopLength() {
+        return loopLength;
+    }
+
     @Override
     public void run() {
-        long time = System.currentTimeMillis();
+        startTime = System.currentTimeMillis();
         while (currentPosition < loopLength) {
             try {
-                Thread.sleep(10);
+                Thread.sleep(10); // Call to 'Thread sleep()' in a loop, probably busy waiting? Do we need always to create sleep?
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             currentPosition += step;
-//            System.out.println("Horse " + name + " step by " + currentPosition);
+            // line below shows each step after start while horses run their loop
+//            System.out.println("Horse " + name + " current step = " + currentPosition);
         }
-        System.out.println("HORSE : " + name + ", finished 1000 meters race length at TIME = " + (System.currentTimeMillis() - time));
+        endTime = System.currentTimeMillis() - startTime;
+        System.out.println("HORSE : " + name + ", finished 1000 meters race length at TIME = " + endTime);
     }
 
     @Override
-    public int compare(Horse o1, Horse o2) {
-        return 0; // o1.getTime() - o2.getTime();
+    public int compareTo(Horse o1) {
+        // int i = this.getLoopLength() - o1.getLoopLength(); // can be written in (return) as inlined variable
+        // o1.getTime() - o2.getTime(); // planned to see time when each horse finished
+        return Long.compare(this.endTime, o1.endTime); // inlined variable
     }
 
     @Override
     public String toString() {
-        return "Horse{" +
-                "name=" + name +
-                ", step=" + step +
-                ", loopLength=" + loopLength +
-                ", currentPosition=" + currentPosition +
-                '}';
+        return "Horse{" + "name=" + name + ", step=" + step + ", loopLength=" + loopLength + ", currentPosition=" + currentPosition + '}';
     }
 }

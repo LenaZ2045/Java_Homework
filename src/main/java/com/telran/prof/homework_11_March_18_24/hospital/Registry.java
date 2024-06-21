@@ -6,15 +6,15 @@ public class Registry {
 
     private List<Patient> queueList; // confused here, not clear understanding with parameters/types
 
-    private int patientsDayLimit;
+    private int patientsDayLimit = 7;
 
     public Registry() {
     }
 
-    public void fillRegistry(int patientsDayLimit) { // confused here what to set as parameters/types
+    public void fillRegistry(int patientsDayLimit, Patient patient) { // confused here what to set as parameters/types
         int count = 0;
-        if (queueList == null && !queueList.equals(patientsDayLimit)) {
-            queueList.add((Patient) queueList);
+        if (!queueList.equals(patientsDayLimit)) {
+            queueList.add(patientsDayLimit, patient);
             count++;
             System.out.println("Registry list is NOT FULL " + count);
         } else {

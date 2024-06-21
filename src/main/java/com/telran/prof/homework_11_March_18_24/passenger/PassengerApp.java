@@ -25,20 +25,20 @@ public class PassengerApp {
         System.out.println(passengerList);
 
         System.out.println();
-        PriorityQueue<Passenger> studentQueue = new PriorityQueue<>(new PassengerClassification());
-        studentQueue.addAll(passengerList);
+        PriorityQueue<Passenger> passengerQueue = new PriorityQueue<>(new PassengerClassification());
+        passengerQueue.addAll(passengerList);
         System.out.println();
-        System.out.println("First Class Passenger " + (studentQueue.poll()));
-        System.out.println("First Class Passenger " + (studentQueue.poll()));
-        System.out.println("First Class Passenger " + (studentQueue.poll()));
+        System.out.println("First Class Passenger " + (passengerQueue.poll()));
+        System.out.println("First Class Passenger " + (passengerQueue.poll()));
+        System.out.println("First Class Passenger " + (passengerQueue.poll()));
         System.out.println();
-        System.out.println("Second Class Passenger " + (studentQueue.poll()));
-        System.out.println("Second Class Passenger " + (studentQueue.poll()));
-        System.out.println("Second Class Passenger " + (studentQueue.poll()));
-        System.out.println("Second Class Passenger " + (studentQueue.poll()));
-        System.out.println("Second Class Passenger " + (studentQueue.poll()));
-        System.out.println("Second Class Passenger " + (studentQueue.poll()));
-        System.out.println("Second Class Passenger " + (studentQueue.poll()));
-        System.out.println("Both Passenger Classes are seated = " + (studentQueue.poll()));
+        System.out.println("Second Class Passenger " + (passengerQueue.poll()));
+        System.out.println("Second Class Passenger " + (passengerQueue.poll()));
+        System.out.println("Second Class Passenger " + (passengerQueue.poll()));
+        System.out.println("Second Class Passenger " + (passengerQueue.poll()));
+        System.out.println("Second Class Passenger " + (passengerQueue.poll()));
+        System.out.println("Second Class Passenger " + (passengerQueue.poll()));
+        System.out.println("Second Class Passenger " + (passengerQueue.poll()));
+        System.out.println("Both Passenger Classes are seated = " + (passengerQueue.poll()));
     }
 }

@@ -16,14 +16,6 @@ public class QueueApp {
         System.out.println("CUSTOM ARRAY DEQUE");
         System.out.println(myDeque);
 
-        //  YURIY, MY ITERATOR PRINTS INTEGERS WITHOUT STOPPING, IF YOU WILL HELP - PLEASE LETS FIX THIS TOGETHER! THANK YOU!
-//        System.out.println();
-//        System.out.println("Iterated through ny custom queue");
-//        QueueCustomIterator myDequeIterator = new QueueCustomIterator(myDeque);
-//        while (myDequeIterator.hasNext()) {
-//            System.out.print(myDequeIterator.next() + ", "); // " = " + myDeque.next()
-//        }
-
         System.out.println();
         for (int i = 0; i < 4; i++) {
             System.out.println(i + " = " + myDeque.pollTail());
@@ -35,6 +27,16 @@ public class QueueApp {
         }
 
         System.out.println(myDeque);
+
+        System.out.println();
+        System.out.println("Iterated through ny custom queue");
+        QueueCustomIterator myDequeIterator = new QueueCustomIterator(myDeque);
+        int capacity = 0;
+        while (myDequeIterator.hasNext() && capacity != 22) {
+            int element = myDeque.nextElement(myDequeIterator);
+                System.out.print(element + ", "); // " = " + myDeque.next()
+            capacity++;
+        }
 
         System.out.println();
         System.out.println("JAVA ARRAY DEQUE");
@@ -56,7 +58,7 @@ public class QueueApp {
 
         System.out.println();
         System.out.println("Iterated over java queue");
-        Iterator<Deque> javaQueueIterator = javaQueue.iterator();
+        Iterator javaQueueIterator = javaQueue.iterator();
         while (javaQueueIterator.hasNext()) {
             System.out.print(javaQueueIterator.next() + ", ");
         }

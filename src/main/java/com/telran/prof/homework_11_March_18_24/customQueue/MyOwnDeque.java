@@ -25,4 +25,6 @@ public interface MyOwnDeque {
     Integer nextElement(Iterator<Integer> iterator);
 
     Integer[] iterator();
+
+    boolean hasNext();
 }

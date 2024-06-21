@@ -19,21 +19,6 @@ public class CustomArrayMyDeque implements MyOwnDeque {
     }
 
     @Override
-    public Integer next() {
-        if (head != 0) {
-            head++;
-            return head;
-        }
-        tail++;
-        return tail;
-    }
-
-    @Override
-    public Integer next(int element) {
-        return element;
-    }
-
-    @Override
     public void addToHead(Integer element) {
         if (head != tail) {
             elements[head] = element;
@@ -76,9 +61,10 @@ public class CustomArrayMyDeque implements MyOwnDeque {
     @Override
     public Integer peekHead() {
         Integer element = elements[head];
-        if (element == null) {
-            System.out.println("No such element at the Head");
-        }
+            if (elements.length > 22) {
+                System.out.println("No such element at the Head");
+                return 1;
+            }
         return element;
     }
 
@@ -92,11 +78,23 @@ public class CustomArrayMyDeque implements MyOwnDeque {
     }
 
     @Override
+    public Integer next() {
+        elements[head]++;
+        return elements[head];
+    }
+
+    @Override
+    public Integer next(int element) {
+        if (elements.length <= elements[head])
+        element = elements[head];
+        return element;
+    }
+
+
+
+    @Override
     public boolean isEmpty() {
-        if (elements != null) {
-            return false;
-        }
-        return true;
+        return elements.length == 0;
     }
 
     @Override
@@ -109,6 +107,12 @@ public class CustomArrayMyDeque implements MyOwnDeque {
     public Integer[] iterator() {
         return elements;
     }
+
+    @Override
+    public boolean hasNext() {
+            return head >= 0 && head < elements.length && tail >= 0 && tail < elements.length;
+        }
+
 
     @Override
     public String toString() {
