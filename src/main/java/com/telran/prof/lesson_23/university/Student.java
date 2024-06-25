@@ -17,5 +17,7 @@ public class Student {
     @EqualsAndHashCode.Exclude
     private Degree degree;
 
-//    make to String own realisation
+    public String toString() {
+        return "\n Student : " +"id = " + id + "; name = " + name + "; age = " + age + "; degree = " + degree;
+    }
 }
