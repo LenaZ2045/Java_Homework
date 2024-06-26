@@ -18,6 +18,6 @@ public class Student {
     private Degree degree;
 
     public String toString() {
-        return "\n Student : " +"id = " + id + "; name = " + name + "; age = " + age + "; degree = " + degree;
+        return "\n Student : " + "ID = " + id + "; NAME = " + name + "; AGE = " + age + "; DEGREE = " + degree;
     }
 }

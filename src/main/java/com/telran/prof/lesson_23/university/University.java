@@ -33,7 +33,7 @@ public class University {
     }
 
     public List<Student> getAllStudents() {
-        return new ArrayList<>(students.values()); // return All students
+        return new ArrayList<>(students.values()); // returns All students
     }
 
     public List<Student> getAllStudentsDegree(Degree degree) {

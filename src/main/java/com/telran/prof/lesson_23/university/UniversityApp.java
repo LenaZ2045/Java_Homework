@@ -11,20 +11,19 @@ public class UniversityApp {
     public static void main(String[] args) {
         University university = new University();
 
-        Random randomID = new Random();
         Random randomAge = new Random();
         Random random = new Random();
 
         List<Student> studetnsList = new ArrayList<>();
 
         Faker stdNames = new Faker();
-        for (int i = 0; i < 17; i++) {
+        for (int i = 0; i < 10; i++) {
             Degree randomDegree = Degree.values()[random.nextInt(Degree.values().length)];
-            studetnsList.add(new Student(randomID.nextInt(17), stdNames.name().fullName(), randomAge.nextInt(18, 30), randomDegree));
+            studetnsList.add(new Student(i, stdNames.name().fullName(), randomAge.nextInt(18, 30), randomDegree));
         }
 
         System.out.println();
-        System.out.println(studetnsList);
+        System.out.println("LIST " + studetnsList);
         int count = 0;
         while (count < 10) {
             for (Student student : studetnsList) {
@@ -33,19 +32,34 @@ public class UniversityApp {
             }
         }
 
+        System.out.println();
+        System.out.println("MAP " + university);
+
+        try {
             System.out.println();
-            System.out.println(university);
+            Random randomID = new Random();
+            Degree randomDegree = Degree.values()[random.nextInt(Degree.values().length)];
+            university.addStudent(new Student(randomID.nextInt(9), stdNames.name().fullName(), randomAge.nextInt(18, 30), randomDegree));
+        } catch (CustomException e) {
+            System.out.println("CustomException = " + e.getMessage());
+        }
 
-            try {
-                System.out.println();
-                Degree randomDegree = Degree.values()[random.nextInt(Degree.values().length)];
-                university.addStudent(new Student(randomID.nextInt(17), stdNames.name().fullName(), randomAge.nextInt(18, 30), randomDegree));
-            } catch (CustomException e) {
-                e.getMessage();
-            }
-            // create 5 students
-            // add 5 students to University
+        System.out.println();
+        System.out.println("Student with Existing ID '9' excluded = " + university.excludeStudent(9));
+        System.out.println("Student with ID '11' is Null ID = " + university.excludeStudent(11));
+        System.out.println();
+        System.out.println("Student List = " + university.getAllStudents());
+        System.out.println();
+        System.out.println("Bachelor Degree student list = " + university.getAllStudentsDegree(Degree.Bachelor));
+        System.out.println();
+        System.out.println("Student quantity after exclusion = " + university.getCountStudents());
 
-            // Add test on class University
+        System.out.println("Master's degree student quantity = " + university.getCountStudents(Degree.Master));
+
+        System.out.println("Sum of all ages in university = " + university.getSumAgeOfAllStudents());
+
+        System.out.println("Sum of all ages in university in Bachelor degree = " + university.getSumAgeOfAllStudents(Degree.Bachelor));
+
+        System.out.println("Average age of students in university = " + university.getAverageAgeOfStudents());
     }
 }
