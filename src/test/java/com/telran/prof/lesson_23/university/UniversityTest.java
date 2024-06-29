@@ -16,13 +16,13 @@ class UniversityTest {
     @BeforeEach
     void setUp() { // Initialize resources or setup state before each test
         university = new University();
-//        university.addStudent(new Student(12, "Anna", 21, Degree.Bachelor)); // with this it gives error because it creates a student
+//        university.addStudent(new Student(12, "Anna", 21, Degree.Bachelor)); // with this it gives error in the test because it creates a student
     }
 
     @AfterEach
-    void tearDown() { // what should I write here???
+    void tearDown() { // what should I write here??? For use @AfterEach in tests I should use it when I pull lots of database from other sources
         // Cleanup or teardown tasks:
-        // - Close resources
+        // - Close resources (for database)
         // - Reset state
         // - Log results
     }
